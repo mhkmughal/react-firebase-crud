@@ -10,7 +10,7 @@ const logout = (props) => {
   return (
     <div>
       <button className="logout-btn" value="submit" onClick={logOutUser}>Log Out</button>
-      <span className="user-name">{localStorage.getItem("id")}</span>
+      <span className="user-name">{props.email}</span>
     </div>
   )
 };

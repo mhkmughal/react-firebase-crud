@@ -13,22 +13,22 @@ class Navigation extends Component {
         <div className="App-header">
           {this.props.authenticated ? (
             <span>
-              <Redirect to="/Dashboard" />
+              <Redirect exact to="/Dashboard" />
               <Logout />
             </span>
           ) : (
               <span>
-                <Redirect to="/login"/>
-                <NavLink className="navbar" to="/register">Register</NavLink>
-                <NavLink className="navbar" to="/login">Login</NavLink>
+                <Redirect exact to="/login"/>
+                <NavLink exact className="navbar" to="/register">Register</NavLink>
+                <NavLink exact className="navbar" to="/login">Login</NavLink>
 
               </span>
             )}
         </div>
         <Switch>
-          <Route authenticated={this.props.authenticated} path="/login" component={Login} />
-          <Route authenticated={this.props.authenticated} path="/register" component={Register} />
-          <ProtectedRoute authenticated={this.props.authenticated} path="/dashboard" component={Dashboard} />
+          <Route exact authenticated={this.props.authenticated} path="/login" component={Login} />
+          <Route exact authenticated={this.props.authenticated} path="/register" component={Register} />
+          <ProtectedRoute exact authenticated={this.props.authenticated} path="/dashboard" component={Dashboard} />
         </Switch>
       </Router>
     );

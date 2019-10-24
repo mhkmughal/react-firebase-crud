@@ -12,13 +12,13 @@ const Dashboard = () => {
   return (
     <Router >
       <div className="menu-bar">
-        <Redirect to="/addnewuser"/>
-        <NavLink style={btnStyles} className="btn btn-dark" to="/addnewuser"  >   Add New User</NavLink>
-        <NavLink style={btnStyles} className="btn btn-dark" to="/displayusers">   Display User</NavLink>
+        <Redirect exact to="/addnewuser"/>
+        <NavLink exact style={btnStyles} className="btn btn-dark" to="/addnewuser"  >   Add New User</NavLink>
+        <NavLink exact style={btnStyles} className="btn btn-dark" to="/displayusers">   Display User</NavLink>
       </div>
       <Switch>
-        <Route path="/addnewuser" component={AddNewUser} />
-        <Route path="/displayusers" component={DisplayUsers} />
+        <Route exact path="/addnewuser" component={AddNewUser} />
+        <Route exact path="/displayusers" component={DisplayUsers} />
       </Switch>
     </Router>
   );
